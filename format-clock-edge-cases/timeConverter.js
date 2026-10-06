@@ -2,14 +2,11 @@
 
 function formatAs12HourClock(time) {
   const hours = Number(time.slice(0, 2));
-  const minutes = time.slice(3, 5);
+  const minutes = time.slice(-2);
 
   const period = hours >= 12 ? "pm" : "am";
 
-  let displayHour = hours % 12;
-  if (displayHour === 0) {
-    displayHour = 12;
-  }
+  const displayHour = hours % 12 || 12;
 
   return `${displayHour}:${minutes} ${period}`;
 }
