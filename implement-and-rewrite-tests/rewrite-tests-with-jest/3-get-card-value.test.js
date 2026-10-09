@@ -16,3 +16,23 @@ test(`Should return 11 when given an ace card`, () => {
 // please refer to the Jest documentation:
 // https://jestjs.io/docs/expect#tothrowerror
 
+test(`Should return numeric value for number cards`, () => {
+  expect(getCardValue("2♥")).toEqual(2);
+  expect(getCardValue("9♠")).toEqual(9);
+  expect(getCardValue("10♦")).toEqual(10);
+});
+
+test(`Should return 10 for face cards`, () => {
+  expect(getCardValue("J♣")).toEqual(10);
+  expect(getCardValue("Q♠")).toEqual(10);
+  expect(getCardValue("K♥")).toEqual(10);
+});
+
+test(`Should throw for invalid cards`, () => {
+  expect(() => getCardValue("invalid")).toThrow(
+    /Expected a number followed by a suit, but got "invalid"/
+  );
+  expect(() => getCardValue("A")).toThrow(
+    /Expected a number followed by a suit/
+  );
+});

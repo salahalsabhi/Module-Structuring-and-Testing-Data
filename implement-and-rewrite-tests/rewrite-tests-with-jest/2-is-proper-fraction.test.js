@@ -6,3 +6,15 @@ import { isProperFraction } from "../implement/2-is-proper-fraction.js";
 test(`should return false when denominator is zero`, () => {
   expect(isProperFraction(1, 0)).toEqual(false);
 });
+
+test(`should return true for proper fractions`, () => {
+  expect(isProperFraction(1, 2)).toEqual(true);
+  expect(isProperFraction(0, 5)).toEqual(true);
+  expect(isProperFraction(-1, 2)).toEqual(true);
+});
+
+test(`should return false for improper fractions`, () => {
+  expect(isProperFraction(2, 1)).toEqual(false);
+  expect(isProperFraction(1, 1)).toEqual(false);
+  expect(isProperFraction(5, 3)).toEqual(false);
+});
