@@ -23,6 +23,33 @@
 // After you have implemented the function, write tests to cover all the cases, and
 // execute the code to ensure all tests pass.
 
-export function getCardValue(card) {
-  // TODO: Implement this function
+function getCardValue(card) {
+  const suit = card.slice(-1);
+  const rank = card.slice(0, -1);
+  const suits = ["♠", "♥", "♦", "♣"];
+  const values = {
+    A: 11,
+    J: 10,
+    Q: 10,
+    K: 10,
+    "10": 10,
+    "9": 9,
+    "8": 8,
+    "7": 7,
+    "6": 6,
+    "5": 5,
+    "4": 4,
+    "3": 3,
+    "2": 2,
+  };
+
+  if (!suits.includes(suit) || values[rank] === undefined) {
+    throw new Error(
+      `Expected a number followed by a suit, but got "${card}"`
+    );
+  }
+
+  return values[rank];
 }
+
+export { getCardValue }
