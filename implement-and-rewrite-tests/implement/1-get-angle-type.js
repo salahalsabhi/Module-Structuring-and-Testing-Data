@@ -1,5 +1,17 @@
 // Implement a function getAngleType
-//
+function getAngleType(angle) {
+  return angle > 0 && angle < 90
+    ? "Acute angle"
+    : angle === 90
+      ? "Right angle"
+      : angle > 90 && angle < 180
+        ? "Obtuse angle"
+        : angle === 180
+          ? "Straight angle"
+          : angle > 180 && angle < 360
+            ? "Reflex angle"
+            : "Invalid angle";
+}
 // Don't forget to write tests in implement-tests-with-node-test.
 //
 // When given an angle in degrees, it should return a string indicating the type of angle:
@@ -16,6 +28,4 @@
 // After you have implemented the function, write tests to cover all the cases, and
 // execute the code to ensure all tests pass.
 
-export function getAngleType(angle) {
-  // TODO: Implement this function
-}
+export { getAngleType }
