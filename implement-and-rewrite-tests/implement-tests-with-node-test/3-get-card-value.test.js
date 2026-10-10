@@ -37,3 +37,38 @@ test("Missing suit throws", () => {
 
 
 // TODO: What other invalid card cases can you think of?
+
+test("Empty string throws", () => {
+  assert.throws(
+    () => getCardValue(""),
+    /Expected a number followed by a suit/
+  );
+});
+
+test("Suit only throws", () => {
+  assert.throws(
+    () => getCardValue("♠"),
+    /Expected a number followed by a suit/
+  );
+});
+
+test("Invalid rank throws", () => {
+  assert.throws(
+    () => getCardValue("1♠"),
+    /Expected a number followed by a suit/
+  );
+});
+
+test("Invalid suit throws", () => {
+  assert.throws(
+    () => getCardValue("9X"),
+    /Expected a number followed by a suit/
+  );
+});
+
+test("Rank with no suit character throws", () => {
+  assert.throws(
+    () => getCardValue("10"),
+    /Expected a number followed by a suit/
+  );
+});

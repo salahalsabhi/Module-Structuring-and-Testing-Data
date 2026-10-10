@@ -30,7 +30,13 @@ test("Basic proper fraction", () => {
   assert.equal(isProperFraction(-1, 2), true);
 });
 
+test("Basic proper fraction", () => {
+  assert.equal(isProperFraction(1, -2), true);
+});
 
+test("Basic proper fraction", () => {
+  assert.equal(isProperFraction(-1, -2), true);
+});
 
 
 

@@ -11,6 +11,8 @@ test(`should return true for proper fractions`, () => {
   expect(isProperFraction(1, 2)).toEqual(true);
   expect(isProperFraction(0, 5)).toEqual(true);
   expect(isProperFraction(-1, 2)).toEqual(true);
+  expect(isProperFraction(1, -2)).toEqual(true);
+  expect(isProperFraction(-1, -2)).toEqual(true);
 });
 
 test(`should return false for improper fractions`, () => {

@@ -26,4 +26,15 @@ test("corrctly get angle type", function(){
     assert.equal(getAngleType(400), "Invalid angle");
 });
 
+test("corrctly get angle type", function(){
+    assert.equal(getAngleType(0), "Invalid angle");
+});
+
+test("corrctly get angle type", function(){
+    assert.equal(getAngleType(360), "Invalid angle");
+});
+
+test("corrctly get angle type", function(){
+    assert.equal(getAngleType(-70), "Invalid angle");
+});
 
