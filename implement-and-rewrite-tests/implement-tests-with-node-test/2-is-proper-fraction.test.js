@@ -38,5 +38,14 @@ test("Basic proper fraction", () => {
   assert.equal(isProperFraction(-1, -2), true);
 });
 
+test("Basic proper fraction", () => {
+  assert.equal(isProperFraction(-5, 2), false);
+});
 
+test("Basic proper fraction", () => {
+  assert.equal(isProperFraction(5, -2), false);
+});
 
+test("Basic proper fraction", () => {
+  assert.equal(isProperFraction(-3, -2), false);
+});

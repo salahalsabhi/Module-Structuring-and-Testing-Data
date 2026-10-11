@@ -19,4 +19,7 @@ test(`should return false for improper fractions`, () => {
   expect(isProperFraction(2, 1)).toEqual(false);
   expect(isProperFraction(1, 1)).toEqual(false);
   expect(isProperFraction(5, 3)).toEqual(false);
+  expect(isProperFraction(-5, 2)).toEqual(false);
+  expect(isProperFraction(5, -2)).toEqual(false);
+  expect(isProperFraction(-3, -2)).toEqual(false);
 });
