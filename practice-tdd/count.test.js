@@ -23,7 +23,7 @@ test("should count multiple occurrences of a character", () => {
 // When the function is called with these inputs,
 // Then it should return 0, indicating that no occurrences of `char` were found.
 
-test("should count multiple occurrences of a character including upper cases", () => {
+test("should count character occurrences case-insensitively", () => {
   const str = "BanaNa";
   const char = "n";
   const count = countChar(str, char);
@@ -35,4 +35,8 @@ test("should count 0 occurrences of a character", () => {
   const char = "c";
   const count = countChar(str, char);
   expect(count).toEqual(0);
+});
+
+test("should return 0 when the string is empty", () => {
+  expect(countChar("", "a")).toEqual(0);
 });

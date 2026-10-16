@@ -37,7 +37,7 @@ test("should append 'th' for numbers ending with 11, 12, or 13.", () => {
   expect(getOrdinalNumber(13)).toEqual("13th");
 });
 
-test("should append 'th' for numbers ending with 0, 4, or big numbers.", () => {
+test("should append 'th' for numbers ending in 0 or 4–9", () => {
   expect(getOrdinalNumber(10)).toEqual("10th");
   expect(getOrdinalNumber(30)).toEqual("30th");
   expect(getOrdinalNumber(500)).toEqual("500th");

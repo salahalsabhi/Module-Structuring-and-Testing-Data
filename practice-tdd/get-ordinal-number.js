@@ -1,11 +1,24 @@
 export function getOrdinalNumber(num) {
-  return num % 100 === 11 || num % 100 === 12 || num % 100 === 13
-    ? `${num}th`
-    : num % 10 === 1
-      ? `${num}st`
-      : num % 10 === 2
-        ? `${num}nd`
-        : num % 10 === 3
-          ? `${num}rd`
-          : `${num}th`;
+  const lastTwoDigits = num % 100;
+  const lastDigit = num % 10;
+
+  if (lastTwoDigits === 11 || lastTwoDigits === 12 || lastTwoDigits === 13) {
+    return `${num}th`;
+  }
+
+  if (lastDigit === 1) {
+    return `${num}st`;
+  }
+
+  if (lastDigit === 2) {
+    return `${num}nd`;
+  }
+
+  if (lastDigit === 3) {
+    return `${num}rd`;
+  }
+
+  return `${num}th`;
 }
+
+
