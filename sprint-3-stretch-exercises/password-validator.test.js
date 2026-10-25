@@ -16,34 +16,35 @@ You must breakdown this problem in order to solve it. Find one test case first a
 */
 import { isValidPassword } from "./password-validator.js";
 
-test("password should have at least 5 characters and meets all rules", () => {
-  const password = "Abc1!";
-  const result = isValidPassword(password);
-  expect(result).toEqual(true);
+const previousPasswords = ["password", "12345", "qwerty"];
+
+test("should accept a password that meets all rules", () => {
+  expect(isValidPassword("Abc1!")).toEqual(true);
 });
 
-test("should rejects password shorter than 5 characters", () => {
+test("should reject a password shorter than 5 characters", () => {
+  // only length fails: has upper, lower, digit, symbol
   expect(isValidPassword("Ab1!")).toEqual(false);
 });
 
-test("should rejects password without uppercase", () => {
+test("should reject a password without an uppercase letter", () => {
   expect(isValidPassword("abc1!")).toEqual(false);
 });
 
-test("should rejects password without lowercase", () => {
+test("should reject a password without a lowercase letter", () => {
   expect(isValidPassword("ABC1!")).toEqual(false);
 });
 
-test("should rejects password without number", () => {
+test("should reject a password without a digit", () => {
   expect(isValidPassword("Abcde!")).toEqual(false);
 });
 
-test("should rejects password without symbol", () => {
+test("should reject a password without a required symbol", () => {
   expect(isValidPassword("Abc12")).toEqual(false);
 });
 
-test("should rejects previous password", () => {
-  expect(isValidPassword("password")).toEqual(false);
+test("should reject a previous password", () => {
+  expect(isValidPassword("password", previousPasswords)).toEqual(false);
 });
 
 test("should reject a password listed in the previousPasswords argument", () => {

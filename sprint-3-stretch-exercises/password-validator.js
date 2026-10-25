@@ -1,9 +1,4 @@
-const defaultPreviousPasswords = ["password", "12345", "qwerty"];
-
-export function isValidPassword(
-  password,
-  previousPasswords = defaultPreviousPasswords
-) {
+export function isValidPassword(password, previousPasswords = []) {
   if (password.length < 5) {
     return false;
   }
